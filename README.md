@@ -3,9 +3,9 @@
 Delivery Pipeline
 
 
-## Installation
+## Deployment
 
-Run Dpline installation script:
+Run in command line:
 
     ./deploy_dpline.sh
 
@@ -13,3 +13,4 @@ Run Dpline installation script:
 ## Usage
 
 To access Jenkins, go to http://localhost:8080
+To access Prometheus, got to http://localhost:9090
