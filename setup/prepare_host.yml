@@ -1,0 +1,4 @@
+- name: Setup Host
+  hosts: localhost
+  roles:
+    - { role: install_docker }
