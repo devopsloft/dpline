@@ -9,5 +9,7 @@ pip install ansible
 # Setup Host
 ansible-playbook setup/prepare_host.yml
 
-# Deploy Dpline
-jenkins/deploy_docker.sh
+# Deploy dpline
+jenkins/deploy.sh
+rabbitmq/deploy.sh
+prometheus/deploy.sh
