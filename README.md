@@ -10,7 +10,11 @@ Run in command line:
     ./deploy_dpline.sh
 
 
-## Usage
+## Access
 
-To access Jenkins, go to http://localhost:8080
-To access Prometheus, got to http://localhost:9090
+A summary of how to access the different services deployed by Dpline
+
+Service | Address | User | Password
+:------ |:------|:------:|:--------:
+Jenkins | [http://localhost:8080](http://localhost:8080) | jenkins | jenkins |
+Prometheus | [Prometheus](http://localhost:9090) | None | None |
