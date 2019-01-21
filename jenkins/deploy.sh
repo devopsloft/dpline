@@ -2,7 +2,7 @@
 
 set -euox pipefail
 
-docker build -t dpline/jenkins .
+docker build -t dpline/jenkins -f jenkins/Dockerfile .
 
 [ ! "$(docker ps -a | grep jenkins)" ] &&
 docker run \

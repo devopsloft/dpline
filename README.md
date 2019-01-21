@@ -1,9 +1,16 @@
-# dpline
+# Dpline
 
 Delivery Pipeline
 
 
 ## Installation
+
+Latest version
+
+virtualenv ~/dpline_venv && source ~/dpline_venv/bin/activate
+pip install .
+
+Stable version:
 
 pip install python-dpline
 
@@ -11,17 +18,14 @@ pip install python-dpline
 
 Deploy Dpline delivery pipeline:
 
-    dpline deploy --all
+    ./deploy_dpline.sh
 
 
 ## Access
 
 A summary of how to access the different services deployed by Dpline
 
-
-To access Prometheus, got to http://localhost:9090
-=======
 Service | Address | User | Password
 :------ |:------|:------:|:--------:
 Jenkins | [http://localhost:8080](http://localhost:8080) | jenkins | jenkins |
-Prometheus | [Prometheus](http://localhost:9090) | None | None |
+Prometheus | [http://localhost:9090](http://localhost:9090) | None | None |
