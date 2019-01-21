@@ -3,11 +3,15 @@
 Delivery Pipeline
 
 
-## Deployment
+## Installation
 
-Run in command line:
+pip install python-dpline
 
-    ./deploy_dpline.sh
+## Usage
+
+Deploy Dpline delivery pipeline:
+
+    dpline deploy --all
 
 
 ## Access
