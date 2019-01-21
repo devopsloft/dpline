@@ -3,18 +3,25 @@
 Delivery Pipeline
 
 
-## Deployment
+## Installation
 
-Run in command line:
-
-    ./deploy_dpline.sh
-
+pip install python-dpline
 
 ## Usage
 
-To access Jenkins, go to http://localhost:8080
-admin user credentials:
-  username: jenkins
-  password: jenkins
-  
+Deploy Dpline delivery pipeline:
+
+    dpline deploy --all
+
+
+## Access
+
+A summary of how to access the different services deployed by Dpline
+
+
 To access Prometheus, got to http://localhost:9090
+=======
+Service | Address | User | Password
+:------ |:------|:------:|:--------:
+Jenkins | [http://localhost:8080](http://localhost:8080) | jenkins | jenkins |
+Prometheus | [Prometheus](http://localhost:9090) | None | None |
