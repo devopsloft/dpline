@@ -18,6 +18,9 @@ Deploy Dpline delivery pipeline:
 
 A summary of how to access the different services deployed by Dpline
 
+
+To access Prometheus, got to http://localhost:9090
+=======
 Service | Address | User | Password
 :------ |:------|:------:|:--------:
 Jenkins | [http://localhost:8080](http://localhost:8080) | jenkins | jenkins |
