@@ -2,14 +2,11 @@
 
 set -eox pipefail
 
-echo "Getting updates..."
-apt-get update
-
 echo "Installing Python3..."
-apt-get install -y python3
+dnf install -y python3
 
 echo "Installing pip..."
-apt-get install -y python3-pip
+dnf install -y python3-pip
 
 echo "Upgrading pip..."
 pip3 install --upgrade pip
