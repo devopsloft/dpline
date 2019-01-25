@@ -3,27 +3,21 @@
 Delivery Pipeline
 
 
-## Installation
+## Prerequesites
 
-Latest version
-
-virtualenv ~/dpline_venv && source ~/dpline_venv/bin/activate
-pip install .
-
-Stable version:
-
-pip install python-dpline
+vagrant
+virtualbox
 
 ## Usage
 
-Deploy Dpline delivery pipeline:
+Spawn dpline environment:
 
-    ./deploy_dpline.sh
+    ./dpline-env.sh
 
 
 ## Access
 
-A summary of how to access the different services deployed by Dpline
+A summary of how to access the different services deployed by dpline
 
 Service | Address | User | Password
 :------ |:------|:------:|:--------:
