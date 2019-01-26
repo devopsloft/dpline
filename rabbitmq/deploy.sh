@@ -2,12 +2,18 @@
 
 set -euox pipefail
 
-[ ! "$(docker ps -a | grep rabbitmq)" ] &&
+home=$( dirname "${BASH_SOURCE[0]}" )
+cd $home
+
+docker build -t dpline/rabbitmq -f Dockerfile .
+
+[ ! "$(docker ps -a | grep some-rabbit)" ] &&
 docker run \
   --rm \
   -d \
   -p 5672:5672 \
   -p 15672:15672 \
+  --network=dpline \
   --hostname my-rabbit \
-  --name rabbitmq \
-  rabbitmq:3.7.8-management
+  --name some-rabbit \
+  dpline/rabbitmq
