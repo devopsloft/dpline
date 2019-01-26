@@ -14,6 +14,15 @@ Spawn dpline environment:
 
     ./dpline-env.sh
 
+Or using Dpline CLI:
+
+    pipenv install . && pipenv shell
+    dpline deploy
+
+To deploy directly on your environment, without a VM:
+
+    dpline deploy --directly
+
 
 ## Access
 

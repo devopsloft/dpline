@@ -26,10 +26,11 @@ def create_list_parser(subparsers, pparser):
 def create_deploy_parser(subparsers, pparser):
     """The parser for sub command 'deploy'."""
     deploy_parser = subparsers.add_parser("deploy", parents=[pparser])
-    deploy_parser.add_argument('--all', '-a',
-                               dest="deploy_all",
+    deploy_parser.add_argument('--directly', '-d',
+                               dest="directly",
                                action='store_true',
-                               help='Deploy all services')
+                               default=False,
+                               help='Deploy Dpline directly on your environment, without a VM')
 
 
 def create_parser():
