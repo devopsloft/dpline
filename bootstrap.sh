@@ -16,6 +16,8 @@ ansible-galaxy install -r /vagrant/requirements.yml
 # Setup Host
 ansible-playbook /vagrant/setup/prepare_host.yml
 
+docker network create --driver bridge dpline
+
 # Deploy dpline
 /vagrant/jenkins/deploy.sh
 /vagrant/rabbitmq/deploy.sh

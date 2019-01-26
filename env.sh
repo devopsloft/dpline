@@ -15,12 +15,12 @@ if ! [ -x "$(command -v vagrant)" ]; then
   exit 1
 fi
 
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  if [ -z "$(spctl --assess --verbose /Applications/Xcode.app > /dev/null 2>&1)" ]; then
-    echo 'Error: Xcode is not installed'
-    exit 1
-  fi
-fi
+# if [[ "$OSTYPE" == "darwin"* ]]; then
+#   if [ -z "$(spctl --assess --verbose /Applications/Xcode.app > /dev/null 2>&1)" ]; then
+#     echo 'Error: Xcode is not installed'
+#     exit 1
+#   fi
+# fi
 
 if [ "$ACTION" == "up" ]; then
 
