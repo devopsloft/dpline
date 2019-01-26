@@ -1,0 +1,7 @@
+- name: Delete Prometheus
+  hosts: localhost
+  tasks:
+      - name: Delete Prometheus Container
+        docker_container:
+            name: "prometheus"
+            state: absent

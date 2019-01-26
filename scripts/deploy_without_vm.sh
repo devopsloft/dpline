@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-set -eox pipefail
+set -eo pipefail
+
+# Install required roles
+ansible-galaxy install -r requirements.yml
 
 # Setup Host
 ansible-playbook setup/prepare_host.yml

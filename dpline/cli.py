@@ -36,10 +36,13 @@ def main():
     setup_logging(args.debug)
 
     if args.main_command == 'deploy':
-        if args.directly:
-            subprocess.call(['./scripts/deploy_without_vm.sh'])
-        else:
+        if args.vm:
             subprocess.call(['./dpline-env.sh'])
+        else:
+            subprocess.call(['./scripts/deploy_without_vm.sh'])
+    if args.main_command == 'delete':
+        if not args.vm:
+            subprocess.call(['./scripts/delete_without_vm.sh'])
 
 
 if __name__ == '__main__':

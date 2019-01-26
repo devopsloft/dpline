@@ -27,9 +27,18 @@ def create_deploy_parser(subparsers, pparser):
     """The parser for sub command 'deploy'."""
     deploy_parser = subparsers.add_parser("deploy", parents=[pparser])
     deploy_parser.add_argument(
-        '--directly', '-d', dest="directly", action='store_true',
+        '--vm', '-d', dest="vm", action='store_true',
         default=False,
-        help='Deploy Dpline directly on your environment, without a VM')
+        help='Deploy Dpline inside a VM')
+
+
+def create_delete_parser(subparsers, pparser):
+    """The parser for sub command 'delete'."""
+    delete_parser = subparsers.add_parser("delete", parents=[pparser])
+    delete_parser.add_argument(
+        '--vm', '-d', dest="vm", action='store_true',
+        default=False,
+        help='Delete Dpline VM')
 
 
 def create_parser():
@@ -47,5 +56,6 @@ def create_parser():
 
     create_list_parser(action_subparsers, parent_parser)
     create_deploy_parser(action_subparsers, parent_parser)
+    create_delete_parser(action_subparsers, parent_parser)
 
     return main_parser
