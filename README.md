@@ -1,5 +1,7 @@
 # Dpline
 
+[![Build Status](https://travis-ci.org/bregman-arie/dpline.svg?branch=refactor)](https://travis-ci.org/bregman-arie/dpline)
+
 Delivery Pipeline
 
 
