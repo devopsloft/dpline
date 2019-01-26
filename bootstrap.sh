@@ -2,20 +2,21 @@
 
 set -eox pipefail
 
-echo "Installing Python3..."
-dnf install -y python3
+echo "Installing ansible..."
+n=0
+until [ $n -ge 2 ]
+do
+  dnf install -y ansible && break
+  n=$[$n+1]
+  sleep 15
+done
 
-echo "Installing pip..."
-dnf install -y python3-pip
-
-echo "Upgrading pip..."
-pip3 install --upgrade pip
-pip install ansible
+ansible-galaxy install -r /vagrant/requirements.yml
 
 # Setup Host
 ansible-playbook /vagrant/setup/prepare_host.yml
 
 # Deploy dpline
-jenkins/deploy.sh
-rabbitmq/deploy.sh
-prometheus/deploy.sh
+/vagrant/jenkins/deploy.sh
+/vagrant/rabbitmq/deploy.sh
+/vagrant/prometheus/deploy.sh
