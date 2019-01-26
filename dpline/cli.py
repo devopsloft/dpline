@@ -13,6 +13,7 @@
 #    under the License.
 import logging
 import sys
+import subprocess
 
 import dpline.parser as app_parser
 
@@ -34,8 +35,11 @@ def main():
 
     setup_logging(args.debug)
 
-    # Execute dpline
-    # TODO(abregman): insert here the code that actually executes dpline
+    if args.main_command == 'deploy':
+        if args.directly:
+            subprocess.call(['./scripts/deploy_without_vm.sh'])
+        else:
+            subprocess.call(['./dpline-env.sh'])
 
 
 if __name__ == '__main__':
