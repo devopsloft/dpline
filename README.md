@@ -1,4 +1,4 @@
-# Dpline
+# dpline
 
 [![Build Status](https://travis-ci.org/bregman-arie/dpline.svg?branch=refactor)](https://travis-ci.org/bregman-arie/dpline)
 
@@ -12,16 +12,21 @@ If you want deploy Dpline inside a VM:
     vagrant
     virtualbox
 
+For OS-X only:
+
+    Xcode
+
 ## Usage
 
 Spawn dpline environment:
 
-    ./dpline-env.sh
+    ./env.sh <up|destroy> dev
 
-Or using Dpline CLI:
+Or using dpline CLI:
 
     virtualenv --system-site-packages ~/dpline_venv && source ~/dpline_venv/bin/activate
     dpline deploy
+
 
 To deploy Dpline inside a VM, instead of directly on your environment, run:
 

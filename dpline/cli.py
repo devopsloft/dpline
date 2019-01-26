@@ -45,5 +45,6 @@ def main():
             subprocess.call(['./scripts/delete_without_vm.sh'])
 
 
+
 if __name__ == '__main__':
     sys.exit(main())
