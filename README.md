@@ -1,15 +1,20 @@
 # dpline
 
+[![Build Status](https://travis-ci.org/bregman-arie/dpline.svg?branch=refactor)](https://travis-ci.org/bregman-arie/dpline)
+
 Delivery Pipeline
 
 
 ## Prerequesites
 
-* vagrant
-* virtualbox
+If you want deploy Dpline inside a VM:
+
+    vagrant
+    virtualbox
 
 For OS-X only:
-* Xcode
+
+    Xcode
 
 ## Usage
 
@@ -19,12 +24,17 @@ Spawn dpline environment:
 
 Or using dpline CLI:
 
-    pipenv install . && pipenv shell
+    virtualenv --system-site-packages ~/dpline_venv && source ~/dpline_venv/bin/activate
     dpline deploy
 
-To deploy directly on your host, without a VM:
 
-    dpline deploy --directly
+To deploy Dpline inside a VM, instead of directly on your environment, run:
+
+    dpline deploy --vm
+
+To remove Dpline from your host, run:
+
+    dpline delete
 
 
 ## Access

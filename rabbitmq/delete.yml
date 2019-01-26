@@ -1,0 +1,7 @@
+- name: Delete RabbitMQ
+  hosts: localhost
+  tasks:
+      - name: Delete RabbitMQ Container
+        docker_container:
+            name: "rabbitmq"
+            state: absent

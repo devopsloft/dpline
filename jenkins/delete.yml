@@ -1,0 +1,7 @@
+- name: Delete Jenkins
+  hosts: localhost
+  tasks:
+      - name: Delete Jenkins Container
+        docker_container:
+            name: "jenkins"
+            state: absent
