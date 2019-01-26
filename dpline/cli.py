@@ -39,7 +39,7 @@ def main():
         if args.directly:
             subprocess.call(['./scripts/deploy_without_vm.sh'])
         else:
-            subprocess.call(['./dpline-env.sh'])
+            subprocess.call(['./env.sh'])
 
 
 if __name__ == '__main__':

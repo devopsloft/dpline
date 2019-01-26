@@ -1,25 +1,28 @@
-# Dpline
+# dpline
 
 Delivery Pipeline
 
 
 ## Prerequesites
 
-vagrant
-virtualbox
+* vagrant
+* virtualbox
+
+For OS-X only:
+* Xcode
 
 ## Usage
 
 Spawn dpline environment:
 
-    ./dpline-env.sh
+    ./env.sh <up|destroy> dev
 
-Or using Dpline CLI:
+Or using dpline CLI:
 
     pipenv install . && pipenv shell
     dpline deploy
 
-To deploy directly on your environment, without a VM:
+To deploy directly on your host, without a VM:
 
     dpline deploy --directly
 
