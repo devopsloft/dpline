@@ -15,13 +15,6 @@ if ! [ -x "$(command -v vagrant)" ]; then
   exit 1
 fi
 
-# if [[ "$OSTYPE" == "darwin"* ]]; then
-#   if [ -z "$(spctl --assess --verbose /Applications/Xcode.app > /dev/null 2>&1)" ]; then
-#     echo 'Error: Xcode is not installed'
-#     exit 1
-#   fi
-# fi
-
 if [ "$ACTION" == "up" ]; then
 
   if ! [ -x "$(command -v ansible)" ]; then
@@ -32,6 +25,9 @@ if [ "$ACTION" == "up" ]; then
 
   vagrant box update
   vagrant up $ENV
+
+  curl -s -XPOST 'http://localhost:8080/createItem?name=test' -u jenkins:jenkins --data-binary @jenkins/jobs/test/config.xml -H "Content-Type:text/xml"
+  curl -X POST http://jenkins:jenkins@localhost:8080/job/test/build
 
 elif [ "$ACTION" == "destroy" ]; then
 

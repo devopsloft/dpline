@@ -12,10 +12,6 @@ If you want deploy Dpline inside a VM:
     vagrant
     virtualbox
 
-For OS-X only:
-
-    Xcode
-
 ## Usage
 
 Spawn dpline environment:
@@ -45,3 +41,4 @@ Service | Address | User | Password
 :------ |:------|:------:|:--------:
 Jenkins | [http://localhost:8080](http://localhost:8080) | jenkins | jenkins |
 Prometheus | [http://localhost:9090](http://localhost:9090) | None | None |
+RabbitMQ Management | [http://localhost:15672](http://localhost:15672) | guest | guest |
