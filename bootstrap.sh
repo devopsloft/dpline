@@ -19,6 +19,7 @@ ansible-playbook /vagrant/setup/prepare_host.yml
 docker network create --driver bridge dpline
 
 # Deploy dpline
-/vagrant/jenkins/deploy.sh
-/vagrant/rabbitmq/deploy.sh
-/vagrant/prometheus/deploy.sh
+chmod +x /vagrant/jenkins/deploy.sh && /vagrant/jenkins/deploy.sh
+chmod +x /vagrant/rabbitmq/deploy.sh && /vagrant/rabbitmq/deploy.sh
+chmod +x /vagrant/prometheus/deploy.sh && /vagrant/prometheus/deploy.sh
+chmod +x /vagrant/consul/deploy.sh && /vagrant/consul/deploy.sh
