@@ -5,11 +5,19 @@ set -e
 ACTION=$1
 ENV=$2
 
+echo "Verifying VirtualBox installed"
 if ! [ -x "$(command -v VBoxManage)" ]; then
   echo 'Error: VirtualBox is not installed.'
   exit 1
 fi
 
+echo "Verifying VirtualBox supported version"
+if [ $(virtualbox --help | head -n 1 | awk '{print $NF}') != "v6.0.4" ]; then
+  echo 'Error: Unsupported VirtualBox version'
+  exit 1
+fi
+
+echo "Verifying vagrant installed"
 if ! [ -x "$(command -v vagrant)" ]; then
   echo 'Error: vagrant is not installed.'
   exit 1
