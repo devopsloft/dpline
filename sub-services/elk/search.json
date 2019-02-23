@@ -1,0 +1,27 @@
+{
+    "attributes":{
+        "title":"cnv",
+        "description":"",
+        "hits":0,
+        "columns":[
+            "name"
+        ],
+        "sort":[
+            "_score",
+            "desc"
+        ],
+        "version":1,
+        "kibanaSavedObjectMeta":{
+            "searchSourceJSON":"{
+                \"index\":\"cnv\",
+                \"highlightAll\":true,
+                \"version\":true,
+                \"query\":{
+                    \"language\":\"lucene\",
+                    \"query\":\"\"
+                },
+                \"filter\":[]
+            }"
+        }
+    }
+}
