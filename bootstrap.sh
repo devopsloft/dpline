@@ -16,10 +16,17 @@ ansible-galaxy install -r /vagrant/requirements.yml
 # Setup Host
 ansible-playbook /vagrant/setup/prepare_host.yml
 
-docker network create --driver bridge dpline
+docker network create --driver bridge dpline || true
 
 # Deploy dpline
-chmod +x /vagrant/jenkins/deploy.sh && /vagrant/jenkins/deploy.sh
-chmod +x /vagrant/rabbitmq/deploy.sh && /vagrant/rabbitmq/deploy.sh
-chmod +x /vagrant/prometheus/deploy.sh && /vagrant/prometheus/deploy.sh
-chmod +x /vagrant/consul/deploy.sh && /vagrant/consul/deploy.sh
+
+chmod +x /vagrant/sub-services/rabbitmq/deploy.sh && \
+  /vagrant/sub-services/rabbitmq/deploy.sh
+chmod +x /vagrant/sub-services/elk/deploy.sh && \
+  /vagrant/sub-services/elk/deploy.sh
+# chmod +x /vagrant/sub-services/jenkins/deploy.sh && \
+#   /vagrant/sub-services/jenkins/deploy.sh
+# chmod +x /vagrant/sub-services/prometheus/deploy.sh && \
+#   /vagrant/sub-services/prometheus/deploy.sh
+# chmod +x /vagrant/sub-services/consul/deploy.sh && \
+#   /vagrant/sub-services/consul/deploy.sh
