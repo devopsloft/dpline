@@ -7,6 +7,7 @@ cd $home
 
 [ ! "$(docker ps -a | grep elasticsearch)" ] &&
 docker run \
+  --rm \
   -d \
   -p 9200:9200 \
   -p 9300:9300 \
@@ -14,6 +15,9 @@ docker run \
   --network=dpline \
   --name elasticsearch \
   elasticsearch:6.6.1
+
+chmod +x logstash/deploy.sh && \
+  logstash/deploy.sh
 
 [ ! "$(docker ps -a | grep kibana)" ] &&
 docker run \
@@ -28,10 +32,12 @@ while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' localhost:9200)" != "200" ]
   sleep 5
 done
 
+curl -X PUT "http://localhost:9200/_cluster/settings" \
+  -H "Content-Type: application/json" \
+  -d '{"persistent":{"xpack.monitoring.collection.enabled":true}}'
+
 curl -X PUT "http://localhost:9200/cnv" -H "Content-Type: application/json" \
   -d @index.json
-
-chmod +x artifacts.sh && ./artifacts.sh
 
 while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' localhost:5601/status)" != "200" ]]; do
   sleep 5

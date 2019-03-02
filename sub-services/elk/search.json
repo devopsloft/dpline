@@ -4,7 +4,8 @@
         "description":"",
         "hits":0,
         "columns":[
-            "name"
+            "@timestamp",
+            "message"
         ],
         "sort":[
             "_score",
