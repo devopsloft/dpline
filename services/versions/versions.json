@@ -1,0 +1,14 @@
+{
+    "jenkins": {
+        "current": "2.164.1",
+        "next": ""
+    },
+    "jdk-tool": {
+      "current": "1.2",
+      "next": ""
+    },
+    "rabbitmq-publisher": {
+        "current": "1.2.1",
+        "next": "1.2.1"
+    }
+}
