@@ -34,8 +34,10 @@ if [ "$ACTION" == "up" ]; then
   vagrant box update
   vagrant up $ENV
 
-  curl -s -XPOST 'http://localhost:8080/createItem?name=test' -u jenkins:jenkins --data-binary @jenkins/jobs/test/config.xml -H "Content-Type:text/xml"
-  curl -X POST http://jenkins:jenkins@localhost:8080/job/test/build
+  while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' localhost:8080)" != "200" ]]; do
+    sleep 5
+  done
+  ./test/e2e.py
 
 elif [ "$ACTION" == "destroy" ]; then
 
