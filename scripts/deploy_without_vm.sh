@@ -9,6 +9,6 @@ ansible-galaxy install -r requirements.yml
 ansible-playbook setup/prepare_host.yml
 
 # Deploy dpline
-jenkins/deploy.sh
-rabbitmq/deploy.sh
-prometheus/deploy.sh
+sub-services/jenkins/deploy.sh
+sub-services/rabbitmq/deploy.sh
+sub-services/prometheus/deploy.sh
