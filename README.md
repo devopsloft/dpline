@@ -45,3 +45,11 @@ RabbitMQ Management | [http://localhost:15672](http://localhost:15672) | dpline 
 Consul | [http://localhost:8500](http://localhost:8500) | None | None |
 Elasticsearch | [http://localhost:9200](http://localhost:9200) | None | None |
 kibana | [http://localhost:5601](http://localhost:5601) | None | None |
+
+## How it works?
+
+When you 'dpline deploy' Dpline will do the following:
+
+* Install required Ansible roles listed in requirements.yml
+* Prepare your host for delivery pipeline deployment with `setup/prepare_host.yml`
+* Deploy services (e.g. Jenkins, Prometheus, etc.)

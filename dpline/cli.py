@@ -43,6 +43,8 @@ def main():
     if args.main_command == 'delete':
         if not args.vm:
             subprocess.call(['./scripts/delete_without_vm.sh'])
+    if args.main_command == 'list':
+        pass
 
 
 if __name__ == '__main__':
