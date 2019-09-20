@@ -12,7 +12,7 @@ if ! [ -x "$(command -v VBoxManage)" ]; then
 fi
 
 echo "Verifying VirtualBox supported version"
-if [ $(virtualbox --help | head -n 1 | awk '{print $NF}') != "v6.0.4" ]; then
+if [ $(virtualbox --help | head -n 1 | awk '{print $NF}') != "v6.0.12" ]; then
   echo 'Error: Unsupported VirtualBox version'
   exit 1
 fi
