@@ -1,4 +1,4 @@
-FROM logstash:6.6.1
+FROM logstash:7.3.2
 
 WORKDIR /opt/logstash
 

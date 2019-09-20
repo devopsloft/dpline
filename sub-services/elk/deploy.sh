@@ -14,7 +14,7 @@ docker run \
   -e "discovery.type=single-node" \
   --network=dpline \
   --name elasticsearch \
-  elasticsearch:6.6.1
+  elasticsearch:7.3.2
 
 chmod +x logstash/deploy.sh && \
   logstash/deploy.sh
@@ -26,7 +26,7 @@ docker run \
   -p 5601:5601 \
   --network=dpline \
   --name kibana \
-  kibana:6.6.1
+  kibana:7.3.2
 
 while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' localhost:9200)" != "200" ]]; do
   sleep 5

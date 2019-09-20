@@ -3,7 +3,6 @@
 import os
 import json
 import requests
-import ast
 
 
 def versions_get_current(sub_service_name):
