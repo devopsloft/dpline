@@ -5,7 +5,8 @@ import hudson.*
 import hudson.model.*
 import fr.frogdevelopment.jenkins.plugins.mq.*;
 
-RabbitMqBuilder.RabbitConfig rabbitConfig = new RabbitMqBuilder.RabbitConfig("rabbit","some-rabbit",5672,"dpline","dpline")
+RabbitMqBuilder.RabbitConfig rabbitConfig =
+  new RabbitMqBuilder.RabbitConfig("rabbit","some-rabbit",5672,"dpline","dpline",false)
 
 List<RabbitMqBuilder.RabbitConfig> rabbitConfigs = new List<RabbitMqBuilder.RabbitConfig>[1]
 

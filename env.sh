@@ -12,7 +12,7 @@ if ! [ -x "$(command -v VBoxManage)" ]; then
 fi
 
 echo "Verifying VirtualBox supported version"
-if [ $(virtualbox --help | head -n 1 | awk '{print $NF}') != "v6.0.4" ]; then
+if [ $(virtualbox --help | head -n 1 | awk '{print $NF}') != "v6.0.12" ]; then
   echo 'Error: Unsupported VirtualBox version'
   exit 1
 fi
@@ -28,14 +28,16 @@ if [ "$ACTION" == "up" ]; then
   if ! [ -x "$(command -v ansible)" ]; then
     virtualenv -p python3 venv
     source venv/bin/activate
-    pip install ansible
+    pip install ansible python-jenkins
   fi
 
   vagrant box update
   vagrant up $ENV
 
-  curl -s -XPOST 'http://localhost:8080/createItem?name=test' -u jenkins:jenkins --data-binary @jenkins/jobs/test/config.xml -H "Content-Type:text/xml"
-  curl -X POST http://jenkins:jenkins@localhost:8080/job/test/build
+  while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' localhost:8080)" != "200" ]]; do
+    sleep 5
+  done
+  ./test/e2e.py
 
 elif [ "$ACTION" == "destroy" ]; then
 
