@@ -2,20 +2,6 @@
 
 set -eox pipefail
 
-echo "Installing ansible..."
-n=0
-until [ $n -ge 2 ]
-do
-  dnf install -y ansible && break
-  n=$[$n+1]
-  sleep 15
-done
-
-ansible-galaxy install -r /vagrant/requirements.yml
-
-# Setup Host
-ansible-playbook /vagrant/setup/prepare_host.yml
-
 docker network create --driver bridge dpline || true
 
 # Deploy dpline
