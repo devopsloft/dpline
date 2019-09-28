@@ -16,7 +16,7 @@ docker run \
   --name kibana \
   dpline/kibana
 
-while [[ "$(curl -s -o /dev/null -w '%{http_code}' localhost:5601)" != "200" ]]; do
+while [[ "$(curl -s -o /dev/null -w '%{http_code}' http://localhost:5601/app/kibana)" != "200" ]]; do
   sleep 5
 done
 
