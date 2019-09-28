@@ -8,6 +8,8 @@ docker network create --driver bridge dpline || true
 #   /vagrant/sub-services/rabbitmq/deploy.sh
 chmod +x /vagrant/sub-services/elk/deploy.sh && \
   /vagrant/sub-services/elk/deploy.sh
+chmod +x /vagrant/sub-services/engine/deploy.sh && \
+  /vagrant/sub-services/engine/deploy.sh
 # chmod +x /vagrant/sub-services/jenkins/deploy.sh && \
 #   /vagrant/sub-services/jenkins/deploy.sh
 # chmod +x /vagrant/sub-services/prometheus/deploy.sh && \
