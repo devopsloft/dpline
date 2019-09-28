@@ -26,4 +26,4 @@ curl -X PUT "http://localhost:9200/_cluster/settings" \
   -H "Content-Type: application/json" \
   -d '{"persistent":{"xpack.monitoring.collection.enabled":true}}'
 
-# ./deploy.py
+./deploy.py
