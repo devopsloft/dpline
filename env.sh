@@ -29,7 +29,7 @@ if [ "$ACTION" == "up" ]; then
   vagrant box prune
   vagrant destroy -f $ENV
   vagrant up $ENV
-  ./test/test.py
+  # ./test/test.py
 
 elif [ "$ACTION" == "destroy" ]; then
 

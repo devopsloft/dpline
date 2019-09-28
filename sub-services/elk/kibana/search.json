@@ -1,0 +1,26 @@
+{
+  "attributes": {
+    "columns": [
+      "date",
+      "release",
+      "gate",
+      "nvr",
+      "object",
+      "valid object"
+    ],
+    "kibanaSavedObjectMeta": {
+      "searchSourceJSON": "{\"highlightAll\":true,\"version\":true,\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+    },
+    "sort": [
+      "_score",
+      "desc"
+    ],
+    "title": "Quality Gates Search",
+    "version": 1
+  },
+  "references": [{
+    "id": "quality-gates-index-*",
+    "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+    "type": "index-pattern"
+  }]
+}

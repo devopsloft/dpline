@@ -1,0 +1,21 @@
+{
+    "attributes": {
+        "description": "",
+        "hits": 0,
+        "kibanaSavedObjectMeta": {
+            "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
+        },
+        "optionsJSON": "{\"useMargins\":true,\"hidePanelTitles\":false}",
+        "panelsJSON": "[{\"gridData\":{\"w\":24,\"h\":15,\"x\":0,\"y\":0,\"i\":\"1\"},\"version\":\"7.3.2\",\"panelIndex\":\"1\",\"embeddableConfig\":{},\"panelRefName\":\"panel_0\"}]",
+        "timeRestore": false,
+        "title": "Quality Gates Dashboard",
+        "version": 1
+    },
+    "references": [
+        {
+            "id": "quality-gates-search",
+            "name": "panel_0",
+            "type": "search"
+        }
+    ]
+}
