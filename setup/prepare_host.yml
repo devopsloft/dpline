@@ -1,4 +1,0 @@
-- name: Setup Host
-  hosts: localhost
-  roles:
-      - { role: geerlingguy.docker, become: true }

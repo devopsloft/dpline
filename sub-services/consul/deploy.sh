@@ -14,7 +14,7 @@ docker run \
   --name consul \
   consul:1.4.2 agent -dev -ui -client=0.0.0.0 -bind=0.0.0.0
 
-  while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' http://localhost:8500/ui/dc1/kv)" != "200" ]]; do
+  while [[ "$(curl -s -o /dev/null -w '%{http_code}' http://localhost:8500/ui/dc1/kv)" != "200" ]]; do
     sleep 5
   done
 
