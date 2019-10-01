@@ -1,8 +1,14 @@
 FROM python:3
 
+ENV TZ=Asia/Jerusalem
+
 ADD . /
 
-RUN pip3 install --upgrade pip && \
-    pip install -r requirements.txt
+RUN apt-get update && \
+    apt-get -y install cron && \
+    pip3 install --upgrade pip && \
+    pip3 install -r requirements.txt
 
-CMD [ "python", "./main.py" ]
+COPY ./cronpy /etc/cron.d/cronpy
+
+CMD cron -f
