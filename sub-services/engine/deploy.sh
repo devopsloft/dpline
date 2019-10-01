@@ -9,6 +9,7 @@ docker build -t dpline/engine -f Dockerfile .
 
 [ ! "$(docker ps -a | grep engine)" ] &&
 docker run \
+  --rm \
   -d \
   --network=dpline \
   --name engine \

@@ -17,7 +17,7 @@ docker run \
   dpline/kibana
 
 while [[ "$(curl -s -o /dev/null -w '%{http_code}' http://localhost:5601/app/kibana)" != "200" ]]; do
-  sleep 60
+  sleep 5
 done
 
 ./deploy.py
