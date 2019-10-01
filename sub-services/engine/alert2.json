@@ -1,7 +1,6 @@
 {
     "release" : "1.4.1",
     "nvr": "abc-1.4.1-1",
-    "date" : "2009-11-15T14:12:12",
     "gate" : "CHI score not A",
     "object": "B",
     "valid object": "A"
