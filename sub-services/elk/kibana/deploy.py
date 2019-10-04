@@ -28,6 +28,18 @@ def main():
     if response.status_code != 200:
         print(response.content)
 
+    url = "http://localhost:5601/api/saved_objects/visualization/quality-gates-visualization" # noqa
+    headers = {"kbn-xsrf": "reporting", "Content-Type": "application/json"}
+    payload = open('visualization.json', 'rb').read()
+
+    response = s.post(
+        url=url,
+        headers=headers,
+        data=payload
+    )
+    if response.status_code != 200:
+        print(response.content)
+
     url = "http://localhost:5601/api/saved_objects/dashboard/quality-gates-dashboard" # noqa
     headers = {"kbn-xsrf": "reporting", "Content-Type": "application/json"}
     payload = open('dashboard.json', 'rb').read()
