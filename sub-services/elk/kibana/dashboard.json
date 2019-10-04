@@ -1,21 +1,26 @@
 {
-    "attributes": {
-        "description": "",
-        "hits": 0,
-        "kibanaSavedObjectMeta": {
-            "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
-        },
-        "optionsJSON": "{\"useMargins\":true,\"hidePanelTitles\":false}",
-        "panelsJSON": "[{\"gridData\":{\"w\":48,\"h\":15,\"x\":0,\"y\":0,\"i\":\"1\"},\"version\":\"7.3.2\",\"panelIndex\":\"1\",\"embeddableConfig\":{},\"panelRefName\":\"panel_0\"}]",
-        "timeRestore": false,
-        "title": "Quality Gates Dashboard",
-        "version": 1
+  "attributes": {
+    "description": "",
+    "hits": 0,
+    "kibanaSavedObjectMeta": {
+      "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
     },
-    "references": [
-        {
-            "id": "quality-gates-search",
-            "name": "panel_0",
-            "type": "search"
-        }
-    ]
+    "optionsJSON": "{\"hidePanelTitles\":false,\"useMargins\":true}",
+    "panelsJSON": "[{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":15,\"w\":48,\"h\":15,\"i\":\"1\"},\"panelIndex\":\"1\",\"version\":\"7.3.2\",\"panelRefName\":\"panel_0\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":0,\"w\":24,\"h\":15,\"i\":\"3\"},\"panelIndex\":\"3\",\"version\":\"7.3.2\",\"panelRefName\":\"panel_1\"}]",
+    "timeRestore": false,
+    "title": "Quality Gates Dashboard",
+    "version": 1
+  },
+  "references": [
+    {
+      "id": "quality-gates-search",
+      "name": "panel_0",
+      "type": "search"
+    },
+    {
+      "id": "quality-gates-visualization",
+      "name": "panel_1",
+      "type": "visualization"
+    }
+  ]
 }
