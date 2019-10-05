@@ -2,6 +2,7 @@
 
 set -eox pipefail
 
+pip3 install -r /vagrant/requirements.txt
 docker network create --driver bridge dpline || true
 
 # chmod +x /vagrant/sub-services/rabbitmq/deploy.sh && \
