@@ -1,4 +1,4 @@
-FROM rabbitmq:management
+FROM rabbitmq:3.8.0-management
 MAINTAINER Liora Milbaum <liora@lmb.co.il>
 
 # Define environment variables.

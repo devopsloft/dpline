@@ -5,6 +5,10 @@ set -e
 ACTION=$1
 ENV=$2
 
+set -o allexport
+[[ -f .env.local ]] && source .env.local
+set +o allexport
+
 echo "Verifying VirtualBox installed"
 if ! [ -x "$(command -v VBoxManage)" ]; then
   echo 'Error: VirtualBox is not installed.'
@@ -22,6 +26,8 @@ if ! [ -x "$(command -v vagrant)" ]; then
   echo 'Error: vagrant is not installed.'
   exit 1
 fi
+
+./build.sh
 
 if [ "$ACTION" == "up" ]; then
 

@@ -5,15 +5,18 @@ set -euox pipefail
 home=$( dirname "${BASH_SOURCE[0]}" )
 cd $home
 
-docker build -t dpline/rabbitmq -f Dockerfile .
+set -o allexport
+[[ -f /vagrant/.env.local ]] && source /vagrant/.env.local
+set +o allexport
 
-[ ! "$(docker ps -a | grep some-rabbit)" ] &&
+echo $GITHUB_TOKEN | docker login docker.pkg.github.com --username $GITHUB_USERNAME --password-stdin
+
+[ ! "$(docker ps -a | grep rabbitmq)" ] &&
 docker run \
   --rm \
   -d \
   -p 5672:5672 \
   -p 15672:15672 \
   --network=dpline \
-  --hostname my-rabbit \
-  --name some-rabbit \
-  dpline/rabbitmq
+  --name rabbitmq \
+  docker.pkg.github.com/lioramilbaum/dpline/rabbitmq:latest
