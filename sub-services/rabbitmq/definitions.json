@@ -1,61 +1,49 @@
 {
-  "users": [
-     {
-       "name": "guest",
-       "password_hash": "jl8SwsyUdF7PMwIqmg480wCRLDE=",
-       "tags": "administrator"
-     }
-   ],
-   "vhosts": [
-     {
-       "name": "/"
-     }
-   ],
-   "permissions": [
-     {
-       "user": "guest",
-       "vhost": "/",
-       "configure": ".*",
-       "write": ".*",
-       "read": ".*"
-     }
-   ],
-   "parameters": [],
-   "policies": [],
-   "queues":[
-      {
-         "name":"test",
-         "vhost":"/",
-         "durable":true,
-         "auto_delete":false,
-         "arguments":{
+  "users": [{
+    "name": "guest",
+    "password_hash": "jl8SwsyUdF7PMwIqmg480wCRLDE=",
+    "tags": "administrator"
+  }],
+  "vhosts": [{
+    "name": "/"
+  }],
+  "permissions": [{
+    "user": "guest",
+    "vhost": "/",
+    "configure": ".*",
+    "write": ".*",
+    "read": ".*"
+  }],
+  "parameters": [],
+  "policies": [],
+  "queues": [{
+    "name": "quality_gates_queue",
+    "vhost": "/",
+    "durable": true,
+    "auto_delete": false,
+    "arguments": {
 
-         }
-      }
-   ],
-   "exchanges":[
-      {
-         "name":"test-exchange",
-         "vhost":"/",
-         "type":"topic",
-         "durable":true,
-         "auto_delete":false,
-         "internal":false,
-         "arguments":{
+    }
+  }],
+  "exchanges": [{
+    "name": "quality_gates_exchange",
+    "vhost": "/",
+    "type": "topic",
+    "durable": true,
+    "auto_delete": false,
+    "internal": false,
+    "arguments": {
 
-         }
-      }
-   ],
-   "bindings":[
-      {
-         "source":"test-exchange",
-         "vhost":"/",
-         "destination":"test",
-         "destination_type":"queue",
-         "routing_key":"test",
-         "arguments":{
+    }
+  }],
+  "bindings": [{
+    "source": "quality_gates_exchange",
+    "vhost": "/",
+    "destination": "quality_gates_queue",
+    "destination_type": "queue",
+    "routing_key": "quality_gates_key",
+    "arguments": {
 
-         }
-      }
-   ]
+    }
+  }]
 }
