@@ -2,14 +2,5 @@
 
 set -euox pipefail
 
-home=$( dirname "${BASH_SOURCE[0]}" )
-cd $home
-
-chmod +x elasticsearch/deploy.sh && \
-  elasticsearch/deploy.sh
-
-chmod +x logstash/deploy.sh && \
-  logstash/deploy.sh
-
-chmod +x kibana/deploy.sh && \
-  kibana/deploy.sh
+/vagrant/sub-services/elk/elasticsearch/deploy.sh
+/vagrant/sub-services/elk/kibana/deploy.sh

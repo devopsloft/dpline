@@ -1,3 +1,3 @@
 venv/*
 .vagrant/*
-.env.local
+.env
