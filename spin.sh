@@ -46,3 +46,5 @@ elif [ "$ACTION" == "destroy" ]; then
   vagrant destroy -f $ENV
 
 fi
+
+say done
