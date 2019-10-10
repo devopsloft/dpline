@@ -6,7 +6,7 @@ ACTION=$1
 ENV=$2
 
 set -o allexport
-[[ -f .env.local ]] && source .env.local
+[[ -f .env ]] && source .env
 set +o allexport
 
 echo "Verifying VirtualBox installed"
@@ -27,9 +27,13 @@ if ! [ -x "$(command -v vagrant)" ]; then
   exit 1
 fi
 
-./build.sh
 
 if [ "$ACTION" == "up" ]; then
+
+  echo $GITHUB_TOKEN | docker login docker.pkg.github.com --username $GITHUB_USERNAME --password-stdin
+
+  docker-compose build
+  docker-compose push
 
   vagrant box update
   vagrant box prune

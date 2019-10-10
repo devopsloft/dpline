@@ -1,0 +1,36 @@
+version: "3.7"
+services:
+  rabbitmq:
+    image: docker.pkg.github.com/lioramilbaum/dpline/rabbitmq:latest
+    build: sub-services/rabbitmq
+    container_name: rabbitmq
+    ports:
+      - 5672:5672
+      - 15672:15672
+  elasticsearch:
+    image: docker.pkg.github.com/lioramilbaum/dpline/elasticsearch:latest
+    build: sub-services/elk/elasticsearch
+    container_name: elasticsearch
+    ports:
+      - 9200:9200
+      - 9300:9300
+    environment:
+      - discovery.type=single-node
+  logstash:
+    image: docker.pkg.github.com/lioramilbaum/dpline/logstash:latest
+    build: sub-services/elk/logstash
+    container_name: logstash
+    ports:
+      - 5000:5000
+      - 5044:5044
+      - 9600:9600
+  kibana:
+    image: docker.pkg.github.com/lioramilbaum/dpline/kibana:latest
+    build: sub-services/elk/kibana
+    container_name: kibana
+    ports:
+      - 5601:5601
+  engine:
+    image: docker.pkg.github.com/lioramilbaum/dpline/engine:latest
+    build: sub-services/engine
+    container_name: engine
