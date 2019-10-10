@@ -1,1 +1,1 @@
-* * * * * root /usr/local/bin/python3 /main.py > /var/log/main.log 2>&1
+* * * * * root /usr/local/bin/python3 /main.py > /proc/1/fd/1 2>/proc/1/fd/2
