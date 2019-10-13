@@ -14,11 +14,11 @@ Vagrant.configure("2") do |config|
     dev.vm.provision :docker_compose,
       compose_version: "1.24.1"
     dev.vm.provision :shell, path: "docker-compose.sh"
+    dev.vm.provision :shell, path: "deploy.py"
 
     dev.vm.network "forwarded_port", guest: 5000, host: 5000
     dev.vm.network "forwarded_port", guest: 5044, host: 5044
     dev.vm.network "forwarded_port", guest: 9600, host: 9600
-    dev.vm.network "forwarded_port", guest: 9300, host: 9300
     dev.vm.network "forwarded_port", guest: 5672, host: 5672
     dev.vm.network "forwarded_port", guest: 15672, host: 15672
     dev.vm.network "forwarded_port", guest: 5601, host: 5601
