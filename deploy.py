@@ -15,7 +15,10 @@ from requests.exceptions import ConnectionError
 
 
 def wait_for_elasticsearch():
-    while True:
+    max_tries = 20
+    attempt = 0
+    while True and attempt < max_tries:
+        attempt += 1
         try:
             return requests.head(
                 url='https://localhost:9200',
@@ -23,8 +26,10 @@ def wait_for_elasticsearch():
                 verify='/certs/ca/ca.crt'
             )
         except ConnectionError:
-            logging.info("elasticsearch is not ready yet")
+            logging.info("Elasticsearch server is not ready yet")
             time.sleep(5)
+    logging.error("Elasticsearch server is not ready yet")
+    sys.exit()
 
 
 def set_kibana_password():
@@ -43,7 +48,10 @@ def set_kibana_password():
 
 
 def wait_for_kibana():
-    while True:
+    max_tries = 50
+    attempt = 0
+    while True and attempt < max_tries:
+        attempt += 1
         try:
             response = requests.head(
                 url='http://localhost:5601/login',
@@ -57,6 +65,8 @@ def wait_for_kibana():
         except ConnectionError:
             logging.info("Kibana server is not ready yet")
             time.sleep(5)
+    logging.error("Kibana server is not ready yet")
+    sys.exit()
 
 
 def main():
