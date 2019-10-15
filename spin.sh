@@ -21,13 +21,6 @@ if [ "$(virtualbox --help | head -n 1 | awk '{print $NF}')" != "v6.0.12" ]; then
   exit 1
 fi
 
-echo "Verifying vagrant installed"
-if ! [ -x "$(command -v vagrant)" ]; then
-  echo 'Error: vagrant is not installed.'
-  exit 1
-fi
-
-
 if [ "$ACTION" == "up" ]; then
 
   echo $GITHUB_TOKEN | docker login docker.pkg.github.com --username $GITHUB_USERNAME --password-stdin
