@@ -15,7 +15,7 @@ from requests.exceptions import ConnectionError
 
 
 def wait_for_elasticsearch():
-    max_tries = 20
+    max_tries = 50
     attempt = 0
     while True and attempt < max_tries:
         attempt += 1
