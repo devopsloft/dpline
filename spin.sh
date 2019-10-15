@@ -47,4 +47,4 @@ elif [ "$ACTION" == "destroy" ]; then
 
 fi
 
-say done
+say "done"
