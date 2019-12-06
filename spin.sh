@@ -9,18 +9,6 @@ set -o allexport
 [[ -f .env ]] && source .env
 set +o allexport
 
-echo "Verifying VirtualBox installed"
-if ! [ -x "$(command -v VBoxManage)" ]; then
-  echo 'Error: VirtualBox is not installed.'
-  exit 1
-fi
-
-echo "Verifying VirtualBox supported version"
-if [ "$(virtualbox --help | head -n 1 | awk '{print $NF}')" != "v6.0.12" ]; then
-  echo 'Error: Unsupported VirtualBox version'
-  exit 1
-fi
-
 if [ "$ACTION" == "up" ]; then
 
   echo $GITHUB_TOKEN | docker login docker.pkg.github.com --username $GITHUB_USERNAME --password-stdin
