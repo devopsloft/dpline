@@ -64,5 +64,14 @@ services:
       - dpline
     restart: on-failure
 
+  scm:
+    image: docker.pkg.github.com/lioramilbaum/dpline/scm:latest
+    build: sub-services/scm
+    container_name: scm
+    networks:
+      - dpline
+    volumes:
+      - .env:/.env
+
 networks:
   dpline:
