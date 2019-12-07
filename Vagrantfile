@@ -8,6 +8,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "dev" do |dev|
 
     dev.vm.box = "fedora/30-cloud-base"
+    dev.vm.synced_folder ".", "/vagrant", type: "sshfs"
 
     dev.vm.provision :shell, path: "bootstrap.sh"
 
