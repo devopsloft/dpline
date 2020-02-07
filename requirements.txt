@@ -1,2 +1,2 @@
 elasticsearch==7.0.5
-python-dotenv==0.10.3
+python-dotenv==0.10.5
