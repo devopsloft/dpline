@@ -2,9 +2,8 @@
 
 import os
 
-from github import Github
-
 from dotenv import load_dotenv
+from github import Github
 
 
 def main():
@@ -14,7 +13,6 @@ def main():
         print(repo.name)
         for pr in repo.get_pulls(state='open'):
             print(pr)
-
 
 
 if __name__ == "__main__":
